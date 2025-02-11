@@ -1,0 +1,58 @@
+logging:
+  level:
+    ROOT: INFO
+    org.hibernate.SQL: DEBUG
+    fr.codecake.airbnbcloneback: DEBUG
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: airbnb-clone-back
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        default_schema: airbnb_clone
+  liquibase:
+    contexts: dev
+    change-log: classpath:db/changelog/master.xml
+    default-schema: airbnb_clone
+    enabled: true
+  #    drop-first: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+server:
+  port: 8080
+
+okta:
+  oauth2:
+    # issuer: https://airbnb-clone.us.auth0.com/
+    issuer: https://dev-th8pcf8jpwx4mk5f.us.auth0.com/
+    # client-id: ${AUTH0_CLIENT_ID:YUD3XyKuwilvJlreste8YgDv28NHB0li}
+    # client-secret: ${AUTH0_CLIENT_SECRET:lgMk5KetPPUJh0cH8y64T9sB5i8UIkI9zviP4m1gzIhwicnz8K2RbWIQxejdD_09}
+
+    client-id: ${AUTH0_CLIENT_ID:default-value}
+    client-secret: ${AUTH0_CLIENT_SECRET:default-value}
+
+    # client-id: ${AUTH0_CLIENT_ID} #original
+    # client-secret: ${AUTH0_CLIENT_SECRET} #original
+
+application:
+  auth0:
+    role-landlord-id: rol_i9eXreX852DH5uqb
+    role-tenant-id: rol_HKShO0AOBdiAeDxz
