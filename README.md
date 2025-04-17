@@ -9,9 +9,9 @@
 ### Key Features:
 - 📅 Booking management for travelers
 - 🏠 Landlord reservation management
-- 🔍 Search for houses by criteria (location, date, guests, beds, etc)
+- 🔍 Search for houses by distinct criteria (location, date, guests, beds, etc)
 - 🔐 Authentication and Authorization (Role management) with Auth0 (OAuth2)
-- 🏢 Domain-driven design
+- 🏢 Domain-driven design 
 
 ### Clone the repository
 ``git clone https://github.com/Hamza-H10/AirBnb.git``
